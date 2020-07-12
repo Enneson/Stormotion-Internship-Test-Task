@@ -1,0 +1,48 @@
+.wrapper {
+    width: 80vw;
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.side {
+    position: relative;
+}
+
+.middle {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.matches {
+    width: 100px;
+    height: 100px;
+}
+
+.countContainer {
+    position: absolute;
+    bottom: 0;
+    right: -50px;
+}
+
+p {
+    display: inline;
+}
+
+.match {
+    
+    width: 30px;
+    height: 30px;
+}
+
+img {
+    width: 160px;
+    height: 160px;
+}
+
+.buttons::before {
+    content: 'Take';
+}
