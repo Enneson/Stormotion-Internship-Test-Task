@@ -8,4 +8,9 @@ document.getElementById('popup').onclick = closePopup;
 
 function closePopup(event) {
     document.getElementById('popup').style.display='none';
+    // localStorage.setItem('welcomePopup', 'none');   
 }
+
+// if(localStorage.getItem('welcomePopup')) {
+//     document.getElementById('popup').style.display='none';
+//   }

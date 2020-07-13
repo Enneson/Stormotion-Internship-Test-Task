@@ -8,6 +8,7 @@ let min = 1;
 let max = 3;
 let isEnded = false;
 
+
 computerCounter = computerPrimary;
 totalCounter = totalPrimary;
 playerCounter = playerPrimary;
@@ -61,13 +62,50 @@ function playerTakeMatch( playerValue ) {
 function computerTakeMatch() {
     if( totalCounter == 0 ) { return };
 
-    let computerValue = Math.floor(min + Math.random() * (max + min - 1));
+    let computerValue;
 
-    if( computerValue > totalCounter ) {
-        max = totalCounter;
-        computerValue = Math.floor(min + Math.random() * (max + min - 1));  
+    if ( totalCounter == 7  && playerCounter % 2 != 0 && computerCounter % 2 != 0) {
+
+        computerValue = 2;
+
+    } else if( totalCounter == 5 && playerCounter % 2 != 0 && computerCounter % 2 == 0 ) {
+          
+        computerValue = 1; 
+    
+    } else if( totalCounter == 4 && playerCounter % 2 != 0 && computerCounter % 2 != 0) {
+        
+        computerValue = 2;
+    
+    } else if( totalCounter == 4 && computerCounter % 2 != 0 && playerCounter % 2 == 0) {
+
+        computerValue = 3;
+
+    } else if( totalCounter == 3 && computerCounter %2 != 0) {
+        
+        computerValue = 3;
+     
+    } else if( totalCounter == 3 && computerCounter %2 == 0 ) {
+        
+        computerValue = 2;
+
+    } else if( totalCounter == 2 && computerCounter % 2 != 0 ) {
+
+        computerValue = 1;
+
+    } else if ( totalCounter == 2 && computerCounter % 2 == 0) {
+        
+        computerValue = 2;
+    
+    } else { //стандартный выбор случайного значения, если выше не оказалось подходящего условия
+        
+        computerValue = Math.floor(min + Math.random() * (max + min - 1));
+
+        if( computerValue > totalCounter ) {
+            max = totalCounter;
+            computerValue = Math.floor(min + Math.random() * (max + min - 1));  
+        }
     };
-
+    
     computerCounter = computerCounter + computerValue;
     totalCounter = totalCounter - computerValue;
 };
